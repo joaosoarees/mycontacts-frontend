@@ -13,7 +13,7 @@ export const InputSearchContainer = styled.div`
 
   input {
     width: 100%;
-    background: #FFF;
+    background: ${({ theme }) => theme.colors.primary.text};
     border: none;
     border-radius: 25px;
     height: 50px;
@@ -22,7 +22,7 @@ export const InputSearchContainer = styled.div`
     padding: 0 16px;
 
     &::placeholder {
-      color: #BCBCBC;
+      color: ${({ theme }) => theme.colors.primary.placeholder};
     }
   }
 `;
