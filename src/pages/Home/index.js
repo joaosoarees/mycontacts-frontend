@@ -5,12 +5,12 @@ import * as S from './styles';
 import arrow from '../../assets/images/icons/arrow.svg';
 import edit from '../../assets/images/icons/edit.svg';
 import trash from '../../assets/images/icons/trash.svg';
-import Modal from '../../components/Modal';
+import Loader from '../../components/Loader';
 
 export default function Home() {
   return (
     <S.Container>
-      <Modal danger />
+      <Loader />
 
       <S.InputSearchContainer>
         <input type="text" placeholder="Pesquise pelo nome..." />
