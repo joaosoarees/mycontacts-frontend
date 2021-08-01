@@ -2,8 +2,8 @@ import styled from 'styled-components';
 
 export default styled.button`
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.04);
-  width: 100%;
   height: 52px;
+  padding: 0 16px;
   border: none;
   background: ${({ theme }) => theme.colors.primary.main};
   font-size: 16px;
