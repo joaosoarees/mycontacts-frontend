@@ -11,7 +11,7 @@ import edit from '../../assets/images/icons/edit.svg';
 import trash from '../../assets/images/icons/trash.svg';
 import sad from '../../assets/images/sad.svg';
 import emptyBox from '../../assets/images/empty-box.svg';
-// import magnifierQuestion from '../../assets/images/magnifier-question.svg';
+import magnifierQuestion from '../../assets/images/magnifier-question.svg';
 
 import Loader from '../../components/Loader';
 import Button from '../../components/Button';
@@ -127,6 +127,24 @@ export default function Home() {
               </p>
             </S.EmptyListContainer>
           )}
+
+          {(contacts.length > 0 && filteredContacts.length < 1) && (
+            <S.SearchNotFoundContainer>
+              <img src={magnifierQuestion} alt="Lupa não encontrado." />
+
+              <span>
+                Nenhum resultado foi encontrado para
+                {' '}
+                <strong>
+                  ”
+                  {searchTerm}
+                  ”
+                </strong>
+                .
+              </span>
+            </S.SearchNotFoundContainer>
+          )}
+
           {filteredContacts.length > 0 && (
           <S.ListHeader orderBy={orderBy}>
             <button type="button" onClick={handleToggleOrderBy}>
