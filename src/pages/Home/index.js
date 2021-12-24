@@ -18,23 +18,29 @@ export default function Home() {
 
   const filteredContacts = useMemo(() => contacts.filter((contact) => (
     contact.name.toLowerCase().includes(searchTerm.toLowerCase())
-  )), [contacts, setSearchTerm]);
+  )), [contacts, searchTerm]);
 
   useEffect(() => {
-    setIsLoading(true);
+    async function loadContacts() {
+      try {
+        setIsLoading(true);
 
-    fetch(`http://localhost:3003/contacts?orderBy=${orderBy}`)
-      .then(async (response) => {
+        const response = await fetch(
+          `http://localhost:3003/contacts?orderBy=${orderBy}`,
+        );
+
         await delay(500);
 
         const result = await response.json();
-
         setContacts(result);
-      })
-      .catch((error) => {
+      } catch (error) {
         console.log('error', error);
-      })
-      .finally(() => setIsLoading(false));
+      } finally {
+        setIsLoading(false);
+      }
+    }
+
+    loadContacts();
   }, [orderBy]);
 
   function handleToggleOrderBy() {
