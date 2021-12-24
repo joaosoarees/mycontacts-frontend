@@ -29,7 +29,7 @@ export default function Home() {
 
         setContacts(contactsList);
       } catch (error) {
-        console.log('error', error);
+        console.log(error);
       } finally {
         setIsLoading(false);
       }
