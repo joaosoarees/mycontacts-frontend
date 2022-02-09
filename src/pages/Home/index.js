@@ -30,6 +30,10 @@ export default function Home() {
   )), [contacts, searchTerm]);
 
   const teste = 0
+  const teste = 0
+  const teste = 0
+  const teste = 0
+  const teste = 0
 
   const loadContacts = useCallback(async () => {
     try {
