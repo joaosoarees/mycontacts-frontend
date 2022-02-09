@@ -29,6 +29,8 @@ export default function Home() {
     contact.name.toLowerCase().includes(searchTerm.toLowerCase())
   )), [contacts, searchTerm]);
 
+  const teste = 0
+
   const loadContacts = useCallback(async () => {
     try {
       setIsLoading(true);
